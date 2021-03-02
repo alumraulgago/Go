@@ -3,7 +3,7 @@ package com.mycompany.go;
 
 public class Go {
     private final char[][] matrizTablero = new char[19][19];
-    private char jugador = '1';
+    public char jugador = '1';
     
     public static final int JUGADOR_1 = '1';
     public static final int JUGADOR_2 = '2';
@@ -15,7 +15,6 @@ public class Go {
                 matrizTablero[x][y] = NO_JUGADOR;
             }
         }
-        this.cambiarJugador();
         this.mostrarTablero();
     }
     

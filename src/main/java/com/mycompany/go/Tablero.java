@@ -47,6 +47,7 @@ public final class Tablero {
     }
     
     private void clicCasilla(int x, int y) {
+        go.cambiarJugador();
         System.out.println("Casilla: " + x + "," + y);
         
     }
