@@ -47,8 +47,12 @@ public final class Tablero {
     }
     
     private void clicCasilla(int x, int y) {
-        go.cambiarJugador();
+        this.crearFicha(x, y);
+        go.matrizTablero[x][y] = go.jugador;
+        go.mostrarTablero();
+        System.out.print(go.matrizTablero[x][y] + " ");
         System.out.println("Casilla: " + x + "," + y);
+        go.cambiarJugador();
         
     }
     
@@ -56,7 +60,8 @@ public final class Tablero {
         Circle circle = new Circle(TAM_FICHA / 2);
         GridPane.setHalignment(circle, HPos.CENTER);
         GridPane.setValignment(circle, VPos.CENTER);
-        char jugador = go.getJugadorEnCadaCasilla(x, y);
+        char jugador = go.getJugadorJugando();
+        //char jugador = go.getJugadorEnCadaCasilla(x, y);
         switch(jugador) {
              case Go.JUGADOR_1:
                 circle.setFill(Color.BLACK);
