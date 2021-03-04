@@ -22,7 +22,7 @@ public class Go {
         return matrizTablero[x][y];
     }
     
-    public char getJugadorJugando() {
+    public int getJugadorJugando() {
         return jugador;
     }
     
@@ -38,7 +38,7 @@ public class Go {
     }
     
     
-    public char cambiarJugador() {
+    public int cambiarJugador() {
         System.out.println("Jugador jugando: " + jugador);
         if(jugador == JUGADOR_1) {
             jugador = JUGADOR_2;

@@ -1,5 +1,6 @@
 package com.mycompany.go;
 
+
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.input.MouseEvent;
@@ -53,14 +54,13 @@ public final class Tablero {
         System.out.print(go.matrizTablero[x][y] + " ");
         System.out.println("Casilla: " + x + "," + y);
         go.cambiarJugador();
-        
     }
     
     private void crearFicha(int x, int y) {
         Circle circle = new Circle(TAM_FICHA / 2);
         GridPane.setHalignment(circle, HPos.CENTER);
         GridPane.setValignment(circle, VPos.CENTER);
-        char jugador = go.getJugadorJugando();
+        int jugador = go.getJugadorJugando();
         //char jugador = go.getJugadorEnCadaCasilla(x, y);
         switch(jugador) {
              case Go.JUGADOR_1:
