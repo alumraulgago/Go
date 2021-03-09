@@ -1,6 +1,7 @@
 package com.mycompany.go;
 
 
+
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.input.MouseEvent;
@@ -72,5 +73,7 @@ public final class Tablero {
         }
         gridTablero.add(circle, x, y); 
     }
+    
+    
 }
 

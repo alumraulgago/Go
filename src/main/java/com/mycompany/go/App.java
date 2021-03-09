@@ -28,8 +28,8 @@ public class App extends Application {
         stage.setScene(scene);
         stage.show();
         
-        Go go = new Go();
-        go.Go();
+        
+      
     }
 
     public static void main(String[] args) {

@@ -5,11 +5,11 @@ public class Go {
     public final char[][] matrizTablero = new char[19][19];
     public char jugador = '1';
     
-    public static final int JUGADOR_1 = '1';
-    public static final int JUGADOR_2 = '2';
-    public static final int NO_JUGADOR = '0';
+    public static final char JUGADOR_1 = '1';
+    public static final char JUGADOR_2 = '2';
+    public static final char NO_JUGADOR = '0';
     
-    public void Go() {
+    public Go() {
         for(int y=0; y<19; y++) {
             for(int x=0; x<19; x++) {
                 matrizTablero[x][y] = NO_JUGADOR;
