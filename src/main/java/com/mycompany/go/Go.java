@@ -1,6 +1,8 @@
 package com.mycompany.go;
 
 
+
+
 public class Go {
     public final char[][] matrizTablero = new char[19][19];
     public char jugador = '1';
@@ -47,4 +49,7 @@ public class Go {
         }
         return jugador;
     }
+   
+
+    
 }

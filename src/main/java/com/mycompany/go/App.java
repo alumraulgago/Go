@@ -15,6 +15,7 @@ public class App extends Application {
     public void start(Stage stage) {
         //Creamos el panel principal:
         Tablero tablero = new Tablero();
+      
         
         HBox hBox = new HBox(tablero.getGridTablero());
         hBox.setAlignment(Pos.CENTER);

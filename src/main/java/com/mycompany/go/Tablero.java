@@ -4,6 +4,8 @@ package com.mycompany.go;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -24,9 +26,13 @@ public final class Tablero {
     
     public GridPane getGridTablero(){
         return gridTablero;
+   
+   
     }
     
     public void nuevaPartida() {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTittle("Elección de jugador");
         this.go = new Go();
         this.mostrarCuadrado();
     }
