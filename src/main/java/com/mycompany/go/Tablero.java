@@ -2,20 +2,25 @@ package com.mycompany.go;
 
 
 
+import java.util.Optional;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 
 public final class Tablero {
     private final GridPane gridTablero = new GridPane();
     private Go go;
+    Stage stage;
     
     private final double TAM_CASILLA = 35;
     private final double TAM_FICHA = 30;
@@ -31,8 +36,7 @@ public final class Tablero {
     }
     
     public void nuevaPartida() {
-        Alert alert = new Alert(AlertType.CONFIRMATION);
-        alert.setTittle("Elección de jugador");
+        this.eleccionJugador();
         this.go = new Go();
         this.mostrarCuadrado();
     }
@@ -80,6 +84,26 @@ public final class Tablero {
         gridTablero.add(circle, x, y); 
     }
     
+    private void eleccionJugador(){
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Elección de jugador");
+        alert.setHeaderText(null);
+        alert.setContentText("Elija un jugador");
+        
+        ButtonType botonJugador1 = new ButtonType("Jugador 1");
+        ButtonType botonJugador2 = new ButtonType("Jugador 2");
+        ButtonType botonCancelar = new ButtonType("Cancelar", ButtonData.CANCEL_CLOSE);
+        
+        alert.getButtonTypes().setAll(botonJugador1, botonJugador2, botonCancelar);
+        
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == botonJugador1){
+                
+        } else if (result.get() == botonJugador2){
+            
+        } else if (result.get() == botonCancelar){
+            stage.close();
+        } 
+    }
     
 }
-

@@ -6,6 +6,7 @@ package com.mycompany.go;
 public class Go {
     public final char[][] matrizTablero = new char[19][19];
     public char jugador = '1';
+    private Tablero tablero;
     
     public static final char JUGADOR_1 = '1';
     public static final char JUGADOR_2 = '2';
