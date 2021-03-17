@@ -42,7 +42,7 @@ public class Go {
     
     
     public int cambiarJugador() {
-        System.out.println("Jugador jugando: " + jugador);
+        System.out.println("Ha colocado el jugador: " + jugador);
         if(jugador == JUGADOR_1) {
             jugador = JUGADOR_2;
         } else {

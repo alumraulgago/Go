@@ -21,7 +21,8 @@ import javafx.stage.Stage;
 public final class Tablero {
     private final GridPane gridTablero = new GridPane();
     private Go go;
-    private App app;
+    private Stage stage;
+    
     
     private final double TAM_CASILLA = 35;
     private final double TAM_FICHA = 30;
@@ -29,16 +30,15 @@ public final class Tablero {
     public Tablero(){
         this.nuevaPartida();
     }
+
     
     public GridPane getGridTablero(){
         return gridTablero;
-   
-   
     }
     
     public void nuevaPartida() {
-        this.eleccionJugador();
         this.go = new Go();
+        this.eleccionJugador();
         this.mostrarCuadrado();
     }
     
@@ -85,7 +85,7 @@ public final class Tablero {
         gridTablero.add(circle, x, y); 
     }
     
-    public void eleccionJugador(){
+    private void eleccionJugador(){
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Elección de jugador");
         alert.setHeaderText(null);
@@ -101,10 +101,9 @@ public final class Tablero {
         if(result.get() == botonJugador1){
                 
         } else if (result.get() == botonJugador2){
-            go.jugador = 2;
+            go.jugador = '2';
         } else if (result.get() == botonCancelar){
-//            app.start(stage);
+            stage.close();
         }
     }
-    
 }
