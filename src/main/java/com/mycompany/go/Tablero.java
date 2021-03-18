@@ -27,7 +27,8 @@ public final class Tablero {
     private final double TAM_CASILLA = 35;
     private final double TAM_FICHA = 30;
     
-    public Tablero(){
+    public Tablero(Stage stage1){
+        stage = stage1;
         this.nuevaPartida();
     }
 
