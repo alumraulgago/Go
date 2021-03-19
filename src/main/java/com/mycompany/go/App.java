@@ -22,7 +22,9 @@ public class App extends Application {
     public void start(Stage stage) {
         //Creamos el panel principal:
         this.stage = stage;
-        Tablero tablero = new Tablero(stage);
+        this.go = new Go();
+        Tablero tablero = new Tablero(stage, go);
+        
       
         
         HBox hBox = new HBox(tablero.getGridTablero());
@@ -33,11 +35,12 @@ public class App extends Application {
         root.setAlignment(Pos.CENTER);
         Scene scene = new Scene(root, 900, 700);  
         
+        
         stage.setTitle("GO");
         stage.setScene(scene);
         stage.show();
         
-        public void eleccionJugador(){
+        
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Elección de jugador");
         alert.setHeaderText(null);
@@ -51,16 +54,14 @@ public class App extends Application {
         
         Optional<ButtonType> result = alert.showAndWait();
         if(result.get() == botonJugador1){
-                
+            go.jugador = '1';
         } else if (result.get() == botonJugador2){
             go.jugador = '2';
         } else if (result.get() == botonCancelar){
             stage.close();
         }
-    }
+    
         
-        
-      
     }
 
     public static void main(String[] args) {
